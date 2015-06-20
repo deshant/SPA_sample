@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Yahoo! Finance</title>
+  <title>Finance</title>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -10,7 +10,7 @@
 			<tr>
 				<td style="width: 96%;vertical-align: top;">
 					<div class="list-group" style="margin-top:20px" >
-						<h3 class="list-group-item active">Home</h1> <br>
+						<h3 class="list-group-item active">Home</h3> <br>
 					</div>
 				</td>
 				<td style="vertical-align: top;padding-left:10px;">
@@ -22,7 +22,7 @@
 			<p style="font-family: sans-serif;font-size: 25px;">WELCOME</p>
 			<input type="file" name="file" style="visibility:hidden;" id="pdffile" /><br/>
 			<div class="input-append">
-	   			<input type="text" name="subfile" id="subfile" class="input-xlarge">
+	   			<input type="text" name="subfile" id="subfile" class="input-xlarge" ng-model="symbol">
    				<button class="btn btn-primary" ng-click="look()">Get Quote</button>
 			</div>
 			{{text}}
@@ -30,24 +30,8 @@
 		</div>
 	</div>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   
-  <script>
-    // 
-    // Defining Module
-    //
-    var spApp = angular.module( "ngSpApp", []);
-    //
-    // Controller for Home Page
-    //
-    spApp.controller( "HomeCtrl", [ '$scope','$http', function($scope, $http) {
-      
-      
-      $scope.look = function(){
-    	  $scope.text = 'Hello, this is homepage, under construction';
-    	 
-      }
-      
-    }]);
-  </script>
+  <script src="control.js"></script>
 </body>
 </html>
